@@ -89,17 +89,16 @@
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<version>8.4.0</version>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
-			<version>3.5.9</version>
+			<version>3.5.6</version>
 		</dependency>
-		 https://mvnrepository.com/artifact/org.mybatis/mybatis-spring 
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
-			<version>2.0.6</version>
+			<version>1.3.2</version>
 		</dependency>
 
 		<dependency>
@@ -107,28 +106,32 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-		
-		https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter 
-		<dependency>
+		<!--<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>3.0.3</version>
-		</dependency>
+		</dependency>-->
 
-		 spring-jdbc 추가 
+		<!-- spring-jdbc 추가--> 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
 
-		 spring-test 추가 
+		<!-- spring-test 추가 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${org.springframework-version}</version>
 			<scope>test</scope>
-		</dependency>-->
+		</dependency>
+		
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
 
 	</dependencies>
 
