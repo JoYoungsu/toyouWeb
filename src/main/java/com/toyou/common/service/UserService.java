@@ -1,6 +1,6 @@
-package com.toyou.service;
+package com.toyou.common.service;
 
-import com.toyou.vo.UserVO;
+import com.toyou.common.vo.UserVO;
 
 public interface UserService {
 

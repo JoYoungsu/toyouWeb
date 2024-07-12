@@ -1,17 +1,17 @@
-package com.toyou.service.impl;
+package com.toyou.common.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.toyou.dao.UserDAO;
-import com.toyou.service.UserService;
-import com.toyou.vo.UserVO;
+import com.toyou.common.service.LoginService;
+import com.toyou.common.vo.UserVO;
+import com.toyou.dao.LoginDAO;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class LoginServiceImpl implements LoginService {
 
 	@Autowired
-	private UserDAO dao;
+	private LoginDAO dao;
 	
 	@Override
 	public String getUserList() throws Exception {

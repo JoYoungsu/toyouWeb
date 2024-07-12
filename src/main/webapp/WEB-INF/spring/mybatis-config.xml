@@ -11,12 +11,13 @@
  	
  	<!-- 별칭 작성 부분 -->
 	<typeAliases>
-		<typeAlias type="com.toyou.vo.UserVO" alias="user"/>
+		<typeAlias type="com.toyou.common.vo.UserVO" alias="user"/>
 	</typeAliases>
 	
 	<!-- SQL이 작성되는 mapper 파일 위치 등록 -->
 	<mappers>
 		<mapper resource="/mappers/User.xml"/>
+		<mapper resource="/mappers/Login.xml"/>
 	</mappers>
  	
  	

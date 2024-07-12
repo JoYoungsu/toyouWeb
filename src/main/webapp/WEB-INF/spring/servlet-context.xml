@@ -19,7 +19,7 @@
 	<mvc:annotation-driven />
 
 	<!-- <mvc:resources location="/resources/" mapping="/resources/**"/> -->
-	<!-- <resources mapping="/resources/**" location="/resources/" />  -->
+	<resources mapping="/resources/**" location="/resources/" />
 	
 	<beans:bean id="handlerMapping" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
 		<beans:property name="order" value="1"/>

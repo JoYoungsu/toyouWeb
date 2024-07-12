@@ -1,4 +1,4 @@
-package com.toyou.controller;
+package com.toyou.common.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,8 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.toyou.service.UserService;
-import com.toyou.vo.UserVO;
+import com.toyou.common.service.UserService;
+import com.toyou.common.vo.UserVO;
 
 @Controller
 public class UserController {

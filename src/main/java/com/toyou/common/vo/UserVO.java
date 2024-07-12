@@ -1,4 +1,4 @@
-package com.toyou.vo;
+package com.toyou.common.vo;
 
 import lombok.Data;
 import lombok.Getter;
@@ -8,8 +8,8 @@ import lombok.Setter;
 @Setter
 public class UserVO {
 
-	private String id;
-	private String pw;
+	private String userId;
+	private String userPw;
 	
 //	public String getId() {
 //		return id;
