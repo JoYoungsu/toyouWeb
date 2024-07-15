@@ -1,0 +1,115 @@
+@charset "utf-8" ;
+
+@import url(reset.css);
+@import url(font.css);
+
+
+.shadow{box-shadow: 0 3px 6px rgba(0,0,0,0.16);}
+body{letter-spacing: -0.2px;overflow: hidden;color: #222;background-color: #F2F6F8;}
+#wrap{width: 100%;height: 100vh; }
+header{width: 100%;position: absolute;height: 70px;z-index: 999;background-color: #fff;}
+.H_top{height: 70px;display: flex;justify-content: space-between;width: 1240px;color: #222;margin: 0 auto;}
+#logo{width: 100px;display: flex;align-items: center;}
+#H_right {width: 220px;font-size: 16px;font-weight: 500;}
+#H_right ul {width: 100%;display: flex;justify-content: space-between;}  
+#H_right ul li {display: inline-block;line-height: 70px;cursor: pointer;}
+#H_right .U_info{margin: auto 0;width: 24px;line-height: 70px;display: inline-flex;align-items: center;}
+#H_right .menu {width: 24px;height: 22px;display: inline-flex;flex-direction: column;justify-content: space-between;margin: auto 0 ;}
+#H_right .menu div {width: 24px;height: 3px;background-color: #222;}
+
+#visual{width: 100%;display: flex;position: relative;height: 100vh;}
+#visual::after {position: absolute;content: '';background-color: #61BBFF;width:37%;height: 100%;left: 0;top: 0;transition: .3s;z-index: 1;}
+#visual.on::after{width: 100%;}
+
+#V_bimg {width: 100%;height: 100%;position: absolute;}
+#V_bimg:before{content: '';position: absolute;left: 0;top: 0;width: 100%;height: 100%;background-color: #333F48;opacity: .9;}
+#V_bimg img {width: 100%;top: 0;height: 100%;z-index: -1;}
+.visual_main {width: 1240px;margin: 0 auto;position: relative;min-width: 1240px;}
+.V_left{position: absolute;top: 50%;transform: translateY(-50%);z-index: 999;color: #fff;height: 266px;}
+.V_left > div p {font-size: 20px;background-color: #434343;width: 114px;height: 30px;text-align: center;line-height: 28px;border-radius: 20px;color: #fff;margin-bottom: 16px;box-shadow: 0 3px 6px rgba(0,0,0,0.16);font-family:'Raleway'}
+.V_left h2 {font-size: 70px;font-weight:400;font-family: 'SBAggro';text-shadow: 0 3px 6px rgba(0,0,0,0.16);}
+.V_left i {font-style: normal;font-size: 48px;font-family:'Raleway' ;font-weight: 400;text-shadow: 0 3px 6px rgba(0,0,0,0.16);}
+.mainst {width: 240px;padding: 12px;background-color: #fff ;color: #61BBFF;border: 1px solid #61BBFF;box-shadow: 0 3px 6px rgba(0,0,0,0.16);text-align: center;border-radius: 150px;font-size: 20px;margin-top: 30px;cursor: pointer;transition: .2s;}
+.mainst:hover {background-color: #434343 ;color: #fff;border: 1px solid #434343 ;}
+
+.V_right {width: 560px;height: 370px;overflow: hidden;position: absolute;top: 50%;transform: translateY(-50%);z-index: 999;right: 0;background-color: #434343;border-radius: 12px;}
+.V_right .V_rimg {position: relative;width: 100%;height: 100%;}
+.V_right .V_rimg img {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%) scale(40%);}
+.V_rtx {position: absolute;right: 0;width: 44px;height: 100%;background-color: #fff;top: 0;display: flex;flex-direction: column;justify-content: space-between;align-items: center;padding: 50px 0 16px ;font-size: 20px;font-weight: 500;color: #434343;}
+.V_rtx p {transform: rotate(90deg);letter-spacing: 7px;}
+
+#V_map{position: absolute;width: 37%;z-index: 4;height: 100%;overflow: hidden;transition: .3s;}
+#V_map div {position: relative;}
+#V_map div img {width: 100%;opacity: 0.3;position: absolute;left: 40px;top: 50px;transition: .5s;transform: scale(120%);left: -40px;}
+#V_map.on {overflow: inherit;}
+#V_map.on img {transform: scale(160%);opacity: 0.7}
+
+#V_search {position: absolute;right: 0;top: calc(50%+80px);z-index: 999;transform: translateY(-50%);display: none;}
+#V_search form > div {width: 528px;height: 50px;background-color: #fff;border-radius: 300px;display: flex;align-items: center;padding: 0 23px;gap: 13px;}
+#V_search form > div button {background-color: #fff;height: 21.56px;cursor: pointer;}
+#V_search form input::placeholder {color: #777;font-size: 16px;}
+#V_search form ul {width: 100%;}
+#V_search form ul li:first-child{margin-top: 10px;}
+#V_search form ul li {display: flex;align-items: center;height: 50px;padding: 0 28px;color: #fff;justify-content: space-between;border-radius: 300px;transition: .1s;cursor: pointer;}
+#V_search form ul li div {gap: 16px;display: flex;}
+#V_search form li p{display: inline-block;font-size: 14px;}
+#V_search form li span {font-size: 12px;}
+#V_search form li:hover {background-color: #7091A9;}
+
+
+
+/* 로그인 */
+#loginpop {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);padding: 60px 40px 40px;background-color: #fff;box-shadow: 0 20px 40px rgba(0,0,0,0.16);border-radius: 10px;height: 560px;width: 500px;position: relative;}
+.login {position: absolute;}
+.login .logo{width: 100px;margin: 0 auto 50px;}
+.login .logo img {width: 100%;}
+.loginId {margin-bottom: 20px;display: flex;align-items: center;border: 1px solid #D4DFE8;border-radius: 5px;width: 420px;font-size: 14px;justify-content: space-between;height: 48px;padding: 0 15px;}
+.loginId.on {border: 1px solid #61BBFF;}
+.loginId.on path {fill: #61BBFF !important;}
+.loginPw.on path {fill: #61BBFF !important;}
+.loginId.on input {color: #61BBFF;}
+.loginPw.on input {color: #61BBFF;}
+.loginPw.on {border: 1px solid #61BBFF;color: #61BBFF;}
+.loginId input {background-color: transparent;width: 100%;height: 100%;}
+.loginPw input {background-color: transparent;width: 100%;height: 100%;}
+.loginId input::placeholder{color: #D4DFE8}
+.loginPw input::placeholder{color: #D4DFE8}
+.loginPw {margin-bottom: 26px;display: flex;align-items: center;border: 1px solid #D4DFE8;border-radius: 5px;width: 420px;font-size: 14px;justify-content: space-between;height: 48px;padding: 0 15px;}
+.keepLgn {font-size: 14px;display: flex;align-items: center;justify-content: space-between;margin-bottom: 26px;}
+.keepLgn div {display: flex;align-items: center;}
+.keepLgn input {margin-right: 5px;background-color: #D4DFE8;}
+.keepLgn span {color: #949494;cursor: pointer;}
+.loginBtn {width: 100%;padding: 15px;margin-bottom: 14px;text-align: center;background-color: #61BBFF;border-radius: 5px;color: #fff;cursor: pointer;}
+.simpleLgn {width: 100%;padding: 15px;margin-bottom: 40px;text-align: center;background-color: #FEE339;position: relative;border-radius: 5px;cursor: pointer;}
+.simpleLgn::before{position: absolute;content: url(/img/kakao.png);left: 15px;top: 50%;transform: translateY(-50%);}
+.login > p {text-align: center;font-size: 14px;width: 100%;margin: 0 auto;cursor: pointer;}
+
+/* 회원가입 */
+#loginpop {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);padding: 60px 40px 40px;background-color: #fff;box-shadow: 0 20px 40px rgba(0,0,0,0.16);border-radius: 10px;height: 540px;width: 500px;position: relative;}
+.sign {position: absolute;display: none;}
+.sign .logo{margin: 0 auto 50px;font-size: 28px;text-align: center;font-weight: 500;}
+.sign .logo img {width: 100%;}
+.loginId {margin-bottom: 10px;display: flex;align-items: center;border: 1px solid #D4DFE8;border-radius: 5px;width: 420px;font-size: 14px;justify-content: space-between;height: 48px;padding: 0 15px;}
+.loginem {border: 0;padding: 0;display: flex;gap: 7px;}
+.loginem input {width: 337px; border: 1px solid #D4DFE8;border-radius: 5px;padding: 0 15px;}
+.loginem .jo {width: 100px;border: 1px solid #61BBFF;border-radius: 5px;height: 48px;display: flex;align-items: center;justify-content: center;font-size: 14px;color: #61BBFF;cursor: pointer;transition: .2s;}
+.loginem .jo:hover {color: #fff;background-color: #61BBFF;}
+.loginId.on {border: 1px solid #61BBFF;}
+.loginId.on path {fill: #61BBFF !important;}
+.loginPw.on path {fill: #61BBFF !important;}
+.loginId.on input {color: #61BBFF;}
+.loginPw.on input {color: #61BBFF;}
+.loginPw.on {border: 1px solid #61BBFF;color: #61BBFF;}
+.loginId input {background-color: transparent;width: 100%;height: 100%;}
+.loginPw input {background-color: transparent;width: 100%;height: 100%;}
+.loginId input::placeholder{color: #D4DFE8}
+.loginPw input::placeholder{color: #D4DFE8}
+.loginPw {margin-bottom: 10px;display: flex;align-items: center;border: 1px solid #D4DFE8;border-radius: 5px;width: 420px;font-size: 14px;justify-content: space-between;height: 48px;padding: 0 15px;}
+.keepLgn {font-size: 14px;display: flex;align-items: center;justify-content: space-between;margin-bottom: 26px;}
+.keepLgn div {display: flex;align-items: center;}
+.keepLgn input {margin-right: 5px;background-color: #D4DFE8;}
+.keepLgn span {color: #949494;cursor: pointer;}
+.loginBtn {width: 100%;padding: 15px;margin-bottom: 14px;text-align: center;background-color: #61BBFF;border-radius: 5px;color: #fff;cursor: pointer;}
+.simpleLgn {width: 100%;padding: 15px;margin-bottom: 40px;text-align: center;background-color: #FEE339;position: relative;border-radius: 5px;cursor: pointer;}
+.simpleLgn::before{position: absolute;content: url(/img/kakao.png);left: 15px;top: 50%;transform: translateY(-50%);}
+.login > p {text-align: center;font-size: 14px;width: 100%;margin: 0 auto;cursor: pointer;}
