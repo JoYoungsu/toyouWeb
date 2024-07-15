@@ -8,20 +8,21 @@ import lombok.Setter;
 @Setter
 public class UserVO {
 
-	private String userId;
-	private String userPw;
-	
-//	public String getId() {
-//		return id;
-//	}
-//	public void setId(String id) {
-//		this.id = id;
-//	}
-//	public String getPw() {
-//		return pw;
-//	}
-//	public void setPw(String pw) {
-//		this.pw = pw;
-//	}
+	private Integer		user_no;
+	private String 		user_id;
+	private String 		user_pw;
+	private String 		name;
+	private String 		auth_yn;
+	private String 		profile;
+	private String 		nickname;
+	private String 		zip;
+	private String 		address;
+	private String 		dtl_address;
+	private String 		birth;
+	private String 		phone_num1;
+	private String 		phone_num2;
+	private String 		phone_num3;
+	private String 		email;
+	private String 		user_info;
 	
 }

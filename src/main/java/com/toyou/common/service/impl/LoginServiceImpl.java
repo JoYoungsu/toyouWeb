@@ -18,4 +18,10 @@ public class LoginServiceImpl implements LoginService {
 		
 		return dao.getUserList();
 	}
+	
+	@Override
+	public UserVO loginCheck(UserVO vo) throws Exception {
+		return dao.loginCheck(vo);
+	}
+
 }

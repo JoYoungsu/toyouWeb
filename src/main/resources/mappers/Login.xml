@@ -7,8 +7,13 @@
 <mapper namespace="com.toyou.dao.LoginDAO">
 
 <!-- Query -->
-	<select id="getUserList" resultType="com.toyou.common.vo.UserVO">
-		  select count(*) from tb_user
+	<select id="loginCheck" resultType="com.toyou.common.vo.UserVO" parameterType="com.toyou.common.vo.UserVO">
+		  select 
+		  	*
+		  from tb_user
+		  where 1=1
+		  	and user_id = #{user_id}
+	  	    and user_pw = #{user_pw}
 	</select>
 
 </mapper>
