@@ -1,57 +1,41 @@
 $(document).ready(function(){
 
+     //로그인  
+     $('.loginId').click(function(){
+
+      $(this).addClass('on')
+
+  })
+  $('.loginPw').click(function(){
+
+      $(this).addClass('on')
+
+  })
+
+  $('.keepLgn span').click(function(){
+
+      $('.login').animate({left:-100 + "%",opacity:0},200)
+      $('.login').animate({left:0})
+
+      /* $('.sign').show().animate({opacity:1},200) */
+
+  })
+
+  $('.login_B').click(function(){
+
+  $('.login').animate({left:-100 + "%",opacity:0},200)
+  $('.login').animate({left:0})
+
+  $('.sign').show().animate({opacity:1},100)
+
+  })
+
+
+  $('.jo').click(function(){
+
+  $('.sign .logincer').addClass('on')
     
-    $(function(){
-        var $slider = $('.slider'),
-            $firstSlide = $slider.find('li').first() 
-            .stop(true).animate({'opacity':1},200); 
-      
-        function PrevSlide(){ 
-          stopSlide();startSlide(); 
-          var $lastSlide = $slider.find('li').last() 
-          .prependTo($slider); 
-          $secondSlide = $slider.find('li').eq(1)
-          .stop(true).animate({'opacity':0},800); 
-          $firstSlide = $slider.find('li').first() 
-          .stop(true).animate({'opacity':1},800);
-        }
-        
-        function NextSlide(){ 
-          stopSlide();startSlide(); 
-          $firstSlide = $slider.find('li').first() 
-          .appendTo($slider); 
-          var $lastSlide = $slider.find('li').last() 
-          .stop(true).animate({'opacity':0},800); 
-          $firstSlide = $slider.find('li').first()
-          .stop(true).animate({'opacity':1},800);
-        }
-        
-        $('#next').on('click', function(){ 
-          NextSlide();
-        });
-        $('#prev').on('click', function(){ 
-          PrevSlide();
-        });
-      
-        startSlide();
-        var theInterval;
-      
-        function startSlide() {
-          theInterval = setInterval(NextSlide, 5000); 
-        }
-      
-        function stopSlide() { 
-          clearInterval(theInterval);
-        }
-        
-        $('.slider').hover(function(){
-          stopSlide();
-        }, function (){
-          startSlide();
-        });
-      });
-      
-      Resources
-    
+  })
+   
 })
 

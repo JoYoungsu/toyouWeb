@@ -59,12 +59,12 @@ header{width: 100%;position: absolute;height: 70px;z-index: 999;background-color
 
 
 /* 로그인 */
-#loginpop {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);padding: 60px 40px 40px;background-color: #fff;box-shadow: 0 20px 40px rgba(0,0,0,0.16);border-radius: 10px;height: 560px;width: 500px;position: relative;}
+#loginpop {top: 50%;left: 50%;transform: translate(-50%,-50%);padding: 60px 40px 40px;background-color: #fff;box-shadow: 0 20px 40px rgba(0,0,0,0.16);border-radius: 10px;height: 580px;width: 500px;position: relative;overflow: hidden;}
 .login {position: absolute;}
 .login .logo{width: 100px;margin: 0 auto 50px;}
 .login .logo img {width: 100%;}
-.loginId {margin-bottom: 20px;display: flex;align-items: center;border: 1px solid #D4DFE8;border-radius: 5px;width: 420px;font-size: 14px;justify-content: space-between;height: 48px;padding: 0 15px;}
-.loginId.on {border: 1px solid #61BBFF;}
+.login .loginId {display: flex;align-items: center;border: 1px solid #D4DFE8;border-radius: 5px;width: 420px;font-size: 14px;justify-content: space-between;height: 48px;padding: 0 15px;}
+.login .loginId.on {border: 1px solid #61BBFF;}
 .loginId.on path {fill: #61BBFF !important;}
 .loginPw.on path {fill: #61BBFF !important;}
 .loginId.on input {color: #61BBFF;}
@@ -82,19 +82,26 @@ header{width: 100%;position: absolute;height: 70px;z-index: 999;background-color
 .loginBtn {width: 100%;padding: 15px;margin-bottom: 14px;text-align: center;background-color: #61BBFF;border-radius: 5px;color: #fff;cursor: pointer;}
 .simpleLgn {width: 100%;padding: 15px;margin-bottom: 40px;text-align: center;background-color: #FEE339;position: relative;border-radius: 5px;cursor: pointer;}
 .simpleLgn::before{position: absolute;content: url(/img/kakao.png);left: 15px;top: 50%;transform: translateY(-50%);}
-.login > p {text-align: center;font-size: 14px;width: 100%;margin: 0 auto;cursor: pointer;}
+.login_B {text-align: center;font-size: 14px;width: 100%;margin: 0 auto;cursor: pointer;position: absolute;bottom: 30px;left: 50%;transform: translateX(-50%);}
 
 /* 회원가입 */
-#loginpop {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);padding: 60px 40px 40px;background-color: #fff;box-shadow: 0 20px 40px rgba(0,0,0,0.16);border-radius: 10px;height: 540px;width: 500px;position: relative;}
-.sign {position: absolute;display: none;}
+.sign {position: absolute;display: none;transition: .1s;opacity: 0;}
 .sign .logo{margin: 0 auto 50px;font-size: 28px;text-align: center;font-weight: 500;}
 .sign .logo img {width: 100%;}
 .loginId {margin-bottom: 10px;display: flex;align-items: center;border: 1px solid #D4DFE8;border-radius: 5px;width: 420px;font-size: 14px;justify-content: space-between;height: 48px;padding: 0 15px;}
 .loginem {border: 0;padding: 0;display: flex;gap: 7px;}
+.sign .logincer {display: flex;display: flex;align-items: center;border-radius: 5px;width: 420px;font-size: 14px;justify-content: space-between;padding: 0 6px 0 15px;height: 0;overflow: hidden;transition: .3s;opacity: 0;} 
+.sign .logincer.on {height: 48px;opacity: 1;border: 1px solid #61BBFF;margin-bottom: 10px;}
+.sign .logincer.on input {color: #61BBFF;}
+.logincer input::placeholder{color: #D4DFE8}
+.logincer input {background-color: transparent;height: 100%;width: 100%;}
+.sign .logincer div {display: flex;align-items: center;gap: 10px;}
+.sign .logincer span {display: block;color: #f10707;}
+.sign .logincer p {display: flex;align-items: center;justify-content: center;width: 50px;height: 100%;cursor: pointer;background-color: #61BBFF;color: #fff;border-radius: 5px;height: 36px;}
 .loginem input {width: 337px; border: 1px solid #D4DFE8;border-radius: 5px;padding: 0 15px;}
 .loginem .jo {width: 100px;border: 1px solid #61BBFF;border-radius: 5px;height: 48px;display: flex;align-items: center;justify-content: center;font-size: 14px;color: #61BBFF;cursor: pointer;transition: .2s;}
 .loginem .jo:hover {color: #fff;background-color: #61BBFF;}
-.loginId.on {border: 1px solid #61BBFF;}
+.sign .loginId.on input {border: 1px solid #61BBFF;}
 .loginId.on path {fill: #61BBFF !important;}
 .loginPw.on path {fill: #61BBFF !important;}
 .loginId.on input {color: #61BBFF;}
