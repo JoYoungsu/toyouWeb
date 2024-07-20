@@ -25,7 +25,6 @@ public class UserController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		return "index";
 	}
 }
