@@ -14,6 +14,7 @@ import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -50,20 +51,33 @@ public class LoginController {
 				out.close();
 				return "main/login";
 			} 
-			
-//			Cookie id = new Cookie("user_id", user.getUser_id());
-//			response.addCookie(id);
-			
+
 			 HttpSession session = request.getSession();//세션이 있으면 있는 세션 반환, 없으면 신규세션 생성
 		     session.setAttribute(SessionConst.LOGIN_MEMBER, user);
-		        
+		     
 		} catch (Exception e) {
 			
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return "index";
+		return "redirect:/index.do";
 	}
+	
+	@RequestMapping(value = "/logout.do")
+	public String logout(HttpServletRequest request) {
+		
+		HttpSession session = request.getSession(false);
+		
+		System.out.println("=============================="+ session);
+		session.invalidate();
+		
+//	    if (session != null) {
+//	        session.invalidate(); //세션 제거
+//	    }
+//		
+		return "redirect:/index.do";
+	}
+	
 	
 }

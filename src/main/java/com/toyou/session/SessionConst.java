@@ -1,5 +1,7 @@
 package com.toyou.session;
 
-public interface SessionConst {
-	String LOGIN_MEMBER = "loginMember";
+public class SessionConst {
+	
+	public static final String LOGIN_MEMBER = "loginMember";
+	
 }

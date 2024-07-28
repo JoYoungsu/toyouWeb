@@ -13,27 +13,11 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 </head>
+
+<%@ include file ="common/header.jsp" %>
+
 <body>
     <div id="wrap">
-        <header class="shadow">
-            <div class="H_top">
-                <div id="logo">
-                    <img src="/resources/img/logo.png" alt="">
-                </div>
-                <div id="H_right">
-                    <ul>
-                        <li class="U_login"><a href="/login.do">로그인</a></li>
-                        <li class="customer">고객센터</li>
-                        <li class="U_info"><img src="/resources/img/user.png" alt=""></li>
-                        <li class="menu">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
         <div id="visual">
             <div id="V_bimg">
                 <img src="/resources/img/seoul.jpg" alt="">
@@ -134,4 +118,5 @@
     </script>
 
 </body>
+
 </html>

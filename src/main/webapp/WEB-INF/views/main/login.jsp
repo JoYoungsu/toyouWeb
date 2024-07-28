@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file ="../common/header.jsp" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -13,7 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
-
+<%@ include file ="../common/header.jsp" %>
 
 <body>
     <div id="wrap">
@@ -42,47 +42,36 @@
                         <div>카카오 간편 로그인</div>
                     </div>
                 </form>
-                <p>회원가입</p>
             </div>
-            <div class="sign">
-                <div class="logo">회원가입</div>
+             <div class="sign">
+                    <div class="logo">회원가입</div>
                     <div class="loginId loginem"><input type="email" placeholder="이메일 주소*" class=""> <div class="jo">인증하기</div>
-                          </div>
-                    <div class="loginPw"><input type="password" placeholder="비밀번호* (영문,숫자,특수문자 포함 8자리 이상)"> 
                     </div>
-                    <div class="loginPw"><input type="password" placeholder="비밀번호* (영문,숫자,특수문자 포함 8자리 이상)"> 
+                    <div class="logincer"><input type="text" placeholder="인증번호 입력"><div><span>1212</span><p>확인</p></div></div>
+                    <div class="loginPw"><input type="password" placeholder="비밀번호(영문,숫자,특수문자 포함 8자리 이상)*"> 
+                    </div>
+                    <div class="loginPw"><input type="password" placeholder="비밀번호 확인* "> 
                     </div>
                     <div class="loginPw" style="margin-bottom: 22px;"><input type="text" placeholder="닉네임(선택)"> 
                     </div>
-                    <div class="loginBtn">회원가입</div   >
-                <p style="position: absolute;bottom: -42px;left: 50%;transform: translateX(-50%);font-size: 14px;">로그인</p>
-            </div>
+                    <div class="loginBtn">회원가입</div>
         </div>
+        <p class="login_B">회원가입</p>
     </div>
 
-<script>
-    $('.loginId').click(function(){
-
-        $(this).addClass('on')
-
-    })
-    $('.loginPw').click(function(){
-
-        $(this).addClass('on')
-
-    })
-</script>
-
+    <footer></footer>
 </body>
 
-
 <script>
 
-	function fnLogin() {
+function fnLogin() {
 		document.getElementById("toyou").submit();
 	}
-	
 </script>
+
+
+
+<script src="/resources/js/action.js"></script>
 
 
 </html>
