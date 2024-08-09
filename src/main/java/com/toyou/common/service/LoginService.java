@@ -4,8 +4,13 @@ import com.toyou.common.vo.UserVO;
 
 public interface LoginService {
 
-	public String getUserList() throws Exception;
-	
+	// 로그인 - 정보 조회 
 	public UserVO loginCheck(UserVO vo) throws Exception;
+	
+	// 회원가입 - 중복체크
+	public int userList(UserVO vo) throws Exception;
+
+	// 회원가입
+	public int join(UserVO vo) throws Exception;
 
 }

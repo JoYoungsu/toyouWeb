@@ -9,8 +9,13 @@ import com.toyou.common.vo.UserVO;
 @Repository
 public interface LoginDAO {
 
-	public String getUserList();
-	
+	// 로그인
 	public UserVO loginCheck(UserVO vo);
+	
+	// 회원가입
+	public int join(UserVO vo);
+
+	// 회원가입 - 중복체크
+	public int userList(UserVO vo);
 	
 }

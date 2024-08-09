@@ -14,14 +14,20 @@ public class LoginServiceImpl implements LoginService {
 	private LoginDAO dao;
 	
 	@Override
-	public String getUserList() throws Exception {
-		
-		return dao.getUserList();
-	}
-	
-	@Override
 	public UserVO loginCheck(UserVO vo) throws Exception {
 		return dao.loginCheck(vo);
 	}
 
+	// 회원가입 - 중복체크
+	@Override
+	public int userList(UserVO vo) throws Exception {
+		return dao.userList(vo);
+	}
+
+	// 회원가입
+	@Override
+	public int join(UserVO vo) throws Exception {		
+		return dao.join(vo);
+	}
+	
 }

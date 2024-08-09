@@ -25,4 +25,6 @@ public class UserVO {
 	private String 		email;
 	private String 		user_info;
 	
+	private String 		authCode;
+	
 }

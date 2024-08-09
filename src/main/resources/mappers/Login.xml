@@ -6,8 +6,9 @@
   
 <mapper namespace="com.toyou.dao.LoginDAO">
 
-<!-- Query -->
+	
 	<select id="loginCheck" resultType="com.toyou.common.vo.UserVO" parameterType="com.toyou.common.vo.UserVO">
+	/* 로그인 정보 조회	-	loginCheck */
 		  select 
 		  	*
 		  from tb_user
@@ -15,5 +16,54 @@
 		  	and user_id = #{user_id}
 	  	    and user_pw = #{user_pw}
 	</select>
+	
+	<select id="userList" resultType="integer" parameterType="com.toyou.common.vo.UserVO">
+	/* 회원가입 중복체크	-	userList */
+		  select 
+		  	count(*)
+		  from tb_user
+		  where 1=1
+		  	and user_id = #{user_id}
+	</select>
 
+	<insert id="join" parameterType="com.toyou.common.vo.UserVO">
+	/* 회원가입	-	userList */
+	insert into tb_user (
+		user_id,
+		user_pw,
+		name,
+		auth_yn,
+		profile,
+		nickname,
+		zip,
+		address,
+		dtl_address,
+		birth,
+		phone_num1,
+		phone_num2,
+		phone_num3,
+		email,
+		user_info,
+		insert_dt,
+		insert_user_id
+	) values (
+		#{user_id},
+		#{user_pw},
+		#{name},
+		#{auth_yn},
+		#{profile},
+		#{nickname},
+		#{zip},
+		#{address},
+		#{dtl_address},
+		#{birth},
+		#{phone_num1},
+		#{phone_num2},
+		#{phone_num3},
+		#{user_id},
+		#{user_info},
+		now(),
+		#{user_id}
+	)
+	</insert>
 </mapper>
