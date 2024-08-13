@@ -52,9 +52,9 @@ public class LoginController {
 				return "common/message";
 			} 
 
-			HttpSession session = request.getSession();//세션이 있으면 있는 세션 반환, 없으면 신규세션 생성
-		    session.setAttribute(SessionConst.LOGIN_MEMBER, user);
-		     
+			Cookie idCookie = new Cookie("memberId", String.valueOf(user.getUser_id()));
+			response.addCookie(idCookie);
+
 		} catch (Exception e) {			
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -65,17 +65,26 @@ public class LoginController {
 	
 	/* 로그아웃 */
 	@RequestMapping(value = "/logout.do")
-	public String logout(HttpServletRequest request) {
+	public String logout(HttpServletRequest request, HttpServletResponse response, String cookieName) {
 		
-		HttpSession session = request.getSession(false);
-		
-		System.out.println("=============================="+ session);
-		session.invalidate();
-		
-//	    if (session != null) {
-//	        session.invalidate(); //세션 제거
-//	    }
+//		HttpSession session = request.getSession(false);
+//		session.invalidate();
 //		
+//		System.out.println("session1 : " + session);
+//	    if (session != null) {
+//	    	request.getSession().invalidate(); //세션 제거
+//	        System.out.println("session2 : " + session);
+//	    }
+		
+		Cookie[] cookies = request.getCookies(); // 모든 쿠키의 정보를 cookies에 저장
+	    if (cookies != null) { // 쿠키가 한개라도 있으면 실행
+	        for (int i = 0; i < cookies.length; i++) {
+	            cookies[i].setMaxAge(0); // 유효시간을 0으로 설정
+	            response.addCookie(cookies[i]); // 응답에 추가하여 만료시키기.
+	        }
+	        System.out.println("cookies : " + cookies);
+	    }
+
 		return "redirect:/index.do";
 	}
 	

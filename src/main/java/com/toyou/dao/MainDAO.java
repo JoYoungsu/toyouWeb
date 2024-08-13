@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserDAO {
+public interface MainDAO {
 
 //	@Autowired
 //	SqlSession sqlSession; 
@@ -20,7 +20,5 @@ public interface UserDAO {
 //		return "성공";
 //		
 //	}
-	
-	public String getUserList();
-	
+
 }

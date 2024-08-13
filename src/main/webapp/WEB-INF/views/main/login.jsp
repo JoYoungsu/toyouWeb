@@ -95,6 +95,7 @@
 	        if (seconds < 0) {
 	            clearInterval(countdownTimer);
 	            alert('인증번호 유효시간이 만료되었습니다.');
+	            startCountdown()
 	        }
 	    }, 1000);
 	}

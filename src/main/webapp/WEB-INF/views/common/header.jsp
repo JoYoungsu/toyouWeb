@@ -5,6 +5,7 @@
 			<div id="logo">
 				<img src="/resources/img/logo.png" alt="" onclick="location.href='/index.do'">
 			</div>
+		
 			<div id="H_right">
 				<ul>
 					<li class="U_login" onclick="fnLoginCheck()"><a href="/login.do">로그인</a></li>
@@ -24,7 +25,9 @@
 	<script>
 
 		$( document ).ready(function() {
-			if("${member}" != '' || "${member}" != null) {
+			console.log("cookies : "+"${member}")
+			
+			if("${member}" != '') {
 				$(".U_login").text("로그아웃");
 			} else {
 				$(".U_login").text("로그인");	
@@ -32,14 +35,11 @@
 		});
 		
 		function fnLoginCheck() {
-			
-			
-			if($(".U_login").text() == "로그아웃") {
+			if("${member}" != '') {
 				window.location = "/logout.do";
 			} else {
 				window.location = "/login.do";
-			}
-			
+			}	
 		}
 		
 	</script>
