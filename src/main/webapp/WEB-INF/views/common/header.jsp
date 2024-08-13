@@ -24,9 +24,7 @@
 	
 	<script>
 
-		$( document ).ready(function() {
-			console.log("cookies : "+"${member}")
-			
+		$( document ).ready(function() {		
 			if("${member}" != '') {
 				$(".U_login").text("로그아웃");
 			} else {

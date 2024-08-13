@@ -54,7 +54,7 @@ public class LoginController {
 
 			Cookie idCookie = new Cookie("memberId", String.valueOf(user.getUser_id()));
 			response.addCookie(idCookie);
-
+			idCookie.setMaxAge(60*60);
 		} catch (Exception e) {			
 			// TODO Auto-generated catch block
 			e.printStackTrace();
