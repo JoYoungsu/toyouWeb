@@ -18,4 +18,7 @@ public interface LoginDAO {
 	// 회원가입 - 중복체크
 	public int userList(UserVO vo);
 	
+	// 임시 비밀번호 변경
+	public int updatePw(UserVO vo);
+	
 }

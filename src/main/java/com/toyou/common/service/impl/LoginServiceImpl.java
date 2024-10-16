@@ -30,4 +30,10 @@ public class LoginServiceImpl implements LoginService {
 		return dao.join(vo);
 	}
 	
+	// 임시 비밀번호 변경
+	@Override
+	public int updatePw(UserVO vo) throws Exception {		
+		return dao.updatePw(vo);
+	}
+	
 }

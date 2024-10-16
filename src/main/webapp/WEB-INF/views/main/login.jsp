@@ -66,14 +66,14 @@
 	            </div>
 	        	<div class="loginBtn" onclick="fnJoin()">회원가입</div>
 	        </div>
-			<!-- <div class="F_pw">
+			<div class="F_pw">
 				<div class="logo">비밀번호 찾기</div>
 					<div class="loginId loginem">
-						 <input type="text" id="email_pw" placeholder="이메일" class="">
+						 <input type="text" id="find_pw" placeholder="이메일" class="">
 						 <p>유효한 이메일이 아닙니다.</p>
 				  </div>
-				  <div class="loginBtn"  onclick="fnMailCheck()">인증하기</div>
-		  	</div> -->
+				  <div class="loginBtn"  onclick="fnFindPw()">인증하기</div>
+		  	</div>
        		<p class="login_B">
 				<span class="lb_1">회원가입</span>
 				<span class="lb_2">로그인</span>
@@ -181,6 +181,7 @@
 		});
 	}
 	
+	/* 유효성 체크 */
 	function fnCheck() {
 		if($('#email').val() == '') {
 			alert("이메일 주소를 입력해주세요.");
@@ -197,6 +198,29 @@
 		
 		return true;
 	}
+	
+	/* 비밀번호 찾기 */
+	function fnFindPw() {
+		$.ajax({
+			type	: "POST",
+			url		: "/findPw.json",
+			data	: {
+				user_id	: $("#find_pw").val()
+			},
+			success	:function(response) {
+				if (response.result) {
+					alert("임시 비밀번호가 이메일로 전송되었습니다.");
+					window.location.href = "/login.do";
+				} else{
+					alert(response.message);
+				}
+			}
+		});
+	}
+	
+	
+	
+
 </script>
 
 

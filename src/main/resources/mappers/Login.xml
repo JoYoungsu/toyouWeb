@@ -66,4 +66,13 @@
 		#{user_id}
 	)
 	</insert>
+	
+	<update id="updatePw" parameterType="com.toyou.common.vo.UserVO">
+	/* 비밀번호 변경	-	updatePw */
+	update tb_user
+	set
+		user_pw = #{user_pw}
+	where
+		user_id = #{user_id}
+	</update>
 </mapper>

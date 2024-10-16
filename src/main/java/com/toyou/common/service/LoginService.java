@@ -13,4 +13,7 @@ public interface LoginService {
 	// 회원가입
 	public int join(UserVO vo) throws Exception;
 
+	// 임시 비밀번호 변경
+	public int updatePw(UserVO vo) throws Exception;
+	
 }

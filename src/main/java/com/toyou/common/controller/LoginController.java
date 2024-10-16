@@ -94,7 +94,7 @@ public class LoginController {
     	Map<String,Object> map = new HashMap<String,Object>();
     	try {
     		int user = svc.userList(vo);
-    		
+    		System.out.println(user);
     		if (user > 0) {
     			map.put("message", "이미 사용중인 아이디입니다.");
             	return gson.toJson(map);
@@ -108,5 +108,7 @@ public class LoginController {
 		}
     	return gson.toJson(map);
     }   
+	
+	
 
 }
