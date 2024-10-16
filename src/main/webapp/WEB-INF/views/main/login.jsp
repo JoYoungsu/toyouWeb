@@ -66,7 +66,19 @@
 	            </div>
 	        	<div class="loginBtn" onclick="fnJoin()">회원가입</div>
 	        </div>
-       		<p class="login_B">회원가입</p>
+
+			<!-- <div class="F_pw">
+				<div class="logo">비밀번호 찾기</div>
+					<div class="loginId loginem">
+						 <input type="email" id="email" name="user_id" placeholder="이메일" class="">
+						 <p>유효한 이메일이 아닙니다.</p>
+				  </div>
+				  <div class="loginBtn"  onclick="fnMailCheck()">인증하기</div>
+		  	</div> -->
+       	  	<p class="login_B">
+		  		<span class="lb_1">회원가입</span>
+				<span class="lb_2">로그인</span>
+			</p>
     	</div>
 	</div>
     <footer></footer>
