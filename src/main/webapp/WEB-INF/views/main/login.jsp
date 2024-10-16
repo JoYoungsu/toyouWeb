@@ -153,7 +153,7 @@
 	
 		$.ajax({
 			type	: "POST",
-			url		: "<c:url value="/join.json"/>",
+			url		: "/join.json",
 			data	: {
 				user_id		: $('#email').val(), 
 				user_pw		: $('#pw1').val(), 
@@ -162,7 +162,7 @@
 			success	:function(response) {
 				if (response.result) {
 					alert("회원가입이 완료되었습니다.");
-					window.location.href = "<c:url value='/login.do'/>";
+					window.location.href = "/login.do";
 				} else{
 					alert(response.message);
 				}
