@@ -61,7 +61,7 @@ header{width: 100%;position: absolute;height: 70px;z-index: 999;background-color
 section {width: 1240px;margin: 110px auto;}
 section h2{font-size: 36px;margin-bottom: 36px;}
 section .s_search {}
-section .sec1 {width: 100%;display: flex;flex-wrap: wrap;}
+section .sec1 {width: 100%;display: flex;flex-wrap: wrap;margin-bottom: 80px;}
 section .sec1 > div {width: 100%;border-bottom: 1px solid #C8C8C8;display: flex;text-align: center;padding: 26px 0;align-items: center;}
 section .sec1 .sc1_1 {font-size: 28px;font-weight: bold;width: 5%;}
 section .sec1 .sc1_2 {font-size: 28px;font-weight: bold;width: 30%;text-align: left;padding-left: 100px;}
@@ -75,9 +75,12 @@ section .sec1 .sc1B:nth-child(2) .sc1_1, section .sec1 .sc1B:nth-child(3) .sc1_1
 
 section .sec2 {width: 100%;}
 section .sc2T {flex-wrap: wrap;display: flex;justify-content: space-between;gap: 28px;}
-section .sc2T > div {width: 23%;}
+section .sc2T > div {width: 23%;margin-bottom: 20px;}
 section .sc2T > div img {width: 100%;}
+section .sc2T > div p {margin-top: 10px;font-size: 36px;font-weight: bold;}
+section .sc2T > div span {font-size: 24px;}
 
+section .sc2B {width: 100%;font-size: 20px;color: #61BBFF;border: 1px solid #61BBFF;border-radius: 500px;padding: 15px 0;text-align: center;margin-top: 20px;}
 
 
 
