@@ -1,9 +1,9 @@
-@charset "utf-8" ;
+@charset "utf-8";
 
-@import url(reset.css);
-@import url(font.css);
+@import url('reset.css');
+@import url('font.css');
 
-
+html{scroll-behavior: smooth;}
 .shadow{box-shadow: 0 3px 6px rgba(0,0,0,0.16);}
 body{letter-spacing: -0.2px;overflow: hidden;color: #222;background-color: #F2F6F8;}
 #wrap{width: 100%;height: 100vh; }
@@ -17,7 +17,7 @@ header{width: 100%;position: absolute;height: 70px;z-index: 999;background-color
 #H_right .menu {width: 24px;height: 22px;display: inline-flex;flex-direction: column;justify-content: space-between;margin: auto 0 ;}
 #H_right .menu div {width: 24px;height: 3px;background-color: #222;}
 
-#visual{width: 100%;display: flex;position: relative;height: 100vh;}
+#visual{width: 100%;display: flex;position: relative;height: 100vh;overflow: hidden;}
 #visual::after {position: absolute;content: '';background-color: #61BBFF;width:37%;height: 100%;left: 0;top: 0;transition: .3s;z-index: 1;}
 #visual.on::after{width: 100%;}
 
@@ -44,6 +44,8 @@ header{width: 100%;position: absolute;height: 70px;z-index: 999;background-color
 #V_map.on {overflow: inherit;}
 #V_map.on img {transform: scale(160%);opacity: 0.7}
 
+.V_scroll{position: absolute;width: 20px;height: 24px;bottom: 5px;background-color: #fff;left: 50%;transform: translateX(-50%);z-index: 999;display: none;}
+
 #V_search {position: absolute;right: 0;top: calc(50% + 80px);z-index: 999;transform: translateY(-50%);display: none;}
 #V_search form > div {width: 528px;height: 50px;background-color: #fff;border-radius: 300px;display: flex;align-items: center;padding: 0 23px;gap: 13px;}
 #V_search form > div button {background-color: #fff;height: 21.56px;cursor: pointer;}
@@ -55,6 +57,27 @@ header{width: 100%;position: absolute;height: 70px;z-index: 999;background-color
 #V_search form li p{display: inline-block;font-size: 14px;}
 #V_search form li span {font-size: 12px;}
 #V_search form li:hover {background-color: #7091A9;}
+
+section {width: 1240px;margin: 110px auto;}
+section h2{font-size: 36px;margin-bottom: 36px;}
+section .s_search {}
+section .sec1 {width: 100%;display: flex;flex-wrap: wrap;}
+section .sec1 > div {width: 100%;border-bottom: 1px solid #C8C8C8;display: flex;text-align: center;padding: 26px 0;align-items: center;}
+section .sec1 .sc1_1 {font-size: 28px;font-weight: bold;width: 5%;}
+section .sec1 .sc1_2 {font-size: 28px;font-weight: bold;width: 30%;text-align: left;padding-left: 100px;}
+section .sec1 .sc1_2 span {font-size: 20px;color: #707070;}
+section .sec1 .sc1_3 {display: flex;gap: 10px;width: 57%;justify-content: left;padding-left: 50px;}
+section .sec1 .sc1_3 p {border: 1px solid #61BBFF;color: #61BBFF;border-radius: 100px;padding: 4px 10px;display: flex;align-items: center;}
+section .sec1 .sc1_4 {width: 8%;}
+section .sec1 .sc1T div {font-size: 16px;color: #707070;font-weight: normal;}
+section .sec1 .sc1T .sc1_3 {display: block;text-align: left;}
+section .sec1 .sc1B:nth-child(2) .sc1_1, section .sec1 .sc1B:nth-child(3) .sc1_1, section .sec1 .sc1B:nth-child(4) .sc1_1 {color: #61BBFF;}
+
+section .sec2 {width: 100%;}
+section .sc2T {flex-wrap: wrap;display: flex;justify-content: space-between;gap: 28px;}
+section .sc2T > div {width: 23%;}
+section .sc2T > div img {width: 100%;}
+
 
 
 
@@ -81,7 +104,7 @@ header{width: 100%;position: absolute;height: 70px;z-index: 999;background-color
 .keepLgn span {color: #949494;cursor: pointer;}
 .loginBtn {width: 100%;padding: 15px;margin-bottom: 14px;text-align: center;background-color: #61BBFF;border-radius: 5px;color: #fff;cursor: pointer;}
 .simpleLgn {width: 100%;padding: 15px;margin-bottom: 40px;text-align: center;background-color: #FEE339;position: relative;border-radius: 5px;cursor: pointer;}
-.simpleLgn::before{position: absolute;content: url(/img/kakao.png);left: 15px;top: 50%;transform: translateY(-50%);}
+.simpleLgn::before{position: absolute;content: url(../img/kakao.png);left: 15px;top: 50%;transform: translateY(-50%);}
 .login_B {text-align: center;font-size: 14px;width: 100%;margin: 0 auto;cursor: pointer;position: absolute;bottom: 30px;left: 50%;transform: translateX(-50%);}
 .login_B .lb_2 {display: none;}
 
