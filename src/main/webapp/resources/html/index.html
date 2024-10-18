@@ -248,7 +248,75 @@
                             <p>여주<span>(Yeoju)</span></p>
                         </div>
                     </div>
-                    <div class="sc2B">
+                    <div class="sc2T">
+                        <div>
+                            <img src="../img/seo.png" alt="">
+                            <p>서울<span>(seoul)</span></p>
+                        </div>
+                        <div>
+                            <img src="../img/bu.png" alt="">
+                            <p>부산<span>(Busan)</span></p>
+                        </div>
+                        <div>
+                            <img src="../img/je.png" alt="">
+                            <p>제주도<span>(Jeju)</span></p>
+                        </div>
+                        <div>
+                            <img src="../img/gyen.png" alt="">
+                            <p>경주<span>(Gyeongju)</span></p>
+                        </div>
+                        <div>
+                            <img src="../img/gang.png" alt="">
+                            <p>강릉<span>(Gangneung)</span></p>
+                        </div>
+                        <div>
+                            <img src="../img/yeo.png" alt="">
+                            <p>여수<span>(Yeosu)</span></p>
+                        </div>
+                        <div>
+                            <img src="../img/jeon.png" alt="">
+                            <p>전주<span>(Jeonju)</span></p>
+                        </div>
+                        <div>
+                            <img src="../img/yeo.png" alt="">
+                            <p>여주<span>(Yeoju)</span></p>
+                        </div>
+                    </div> 
+                    <div class="sc2T">
+                        <div>
+                            <img src="../img/seo.png" alt="">
+                            <p>서울<span>(seoul)</span></p>
+                        </div>
+                        <div>
+                            <img src="../img/bu.png" alt="">
+                            <p>부산<span>(Busan)</span></p>
+                        </div>
+                        <div>
+                            <img src="../img/je.png" alt="">
+                            <p>제주도<span>(Jeju)</span></p>
+                        </div>
+                        <div>
+                            <img src="../img/gyen.png" alt="">
+                            <p>경주<span>(Gyeongju)</span></p>
+                        </div>
+                        <div>
+                            <img src="../img/gang.png" alt="">
+                            <p>강릉<span>(Gangneung)</span></p>
+                        </div>
+                        <div>
+                            <img src="../img/yeo.png" alt="">
+                            <p>여수<span>(Yeosu)</span></p>
+                        </div>
+                        <div>
+                            <img src="../img/jeon.png" alt="">
+                            <p>전주<span>(Jeonju)</span></p>
+                        </div>
+                        <div>
+                            <img src="../img/yeo.png" alt="">
+                            <p>여주<span>(Yeoju)</span></p>
+                        </div>
+                    </div>
+                    <div class="sc2more m1">
                         더 보기
                     </div>
                 </div>
@@ -276,9 +344,37 @@
             let secT = $('section').offset().top
 
             $('#wrap').height('auto')
-            $('body').css({'overflow':'auto'})
+            $('body').addClass('on')
             $(window).scrollTop(secT)
+            $(this).hide()
         })
+
+
+        $(document).on('click', '.test', function(){
+            console.log("test1")
+            let test1 = $('.section .sc2T.on').length
+            let test2 = $('.section .sc2T').length
+            $('.section .sc2T.on').slice(0,test1).css({'display':'none'})
+            if($('.section .sc2T.on').length == test2-1){
+                $('.test').removeClass('test').addClass('sc2more').text('더보기')
+                $('.section .sc2T.on').removeClass('on')
+            } 
+
+        })
+
+        $(document).on('click', '.sc2more', function(){
+            console.log("test")
+            $('.section .sc2T:hidden').slice(0,1).addClass('on').css({'display':'flex'})
+            if($('.section .sc2T:hidden').length == 0){
+                $('.sc2more').removeClass('sc2more').addClass('test').text('접기')
+            } 
+
+            
+            
+        })
+
+        
+
     </script>
 
 </body>
