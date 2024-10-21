@@ -327,6 +327,7 @@
 
     <script>
         $('header').slideUp()
+        $('body').css({"height":"100vh"})
 
         $('.mainst').click(function(){
              $('#visual').addClass('on') 
@@ -336,19 +337,13 @@
              $('#V_search').show()
              $(this).hide()
              $('header').slideDown(200)
-             $('.V_scroll').show()     
-        })
-
-        $('.V_scroll').click(function(){
-
-            let secT = $('section').offset().top
-
-            $('#wrap').height('auto')
+   
+             $('#wrap').height('auto')
             $('body').addClass('on')
-            $(window).scrollTop(secT)
-            $(this).hide()
-        })
 
+
+
+        })
 
         $(document).on('click', '.test', function(){
             console.log("test1")

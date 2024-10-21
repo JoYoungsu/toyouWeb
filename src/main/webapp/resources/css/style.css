@@ -5,7 +5,7 @@
 
 html{scroll-behavior: smooth;}
 .shadow{box-shadow: 0 3px 6px rgba(0,0,0,0.16);}
-body{letter-spacing: -0.2px;color: #222;background-color: #F2F6F8;}
+body{letter-spacing: -0.2px;color: #222;background-color: #F2F6F8;overflow: hidden;}
 body.on {overflow: scroll;}
 #wrap{width: 100%;height: 100vh; }
 header{width: 100%;position: absolute;height: 70px;z-index: 999;background-color: #fff;}
