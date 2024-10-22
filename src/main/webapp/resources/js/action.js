@@ -56,3 +56,12 @@ $(document).ready(function(){
    
 })
 
+
+// 241022 추가
+
+// visual 지도
+$('#V_map .map_sw_1 path').click(function(){
+
+  alert('경고')
+
+})
