@@ -36,10 +36,13 @@
                         <div><input type="checkbox"> 로그인 유지</div>
                         <span>비밀번호를 잊으셨나요?</span>
                     </div>
-                    <div class="loginBtn" onclick="fnLogin()">로그인</div   >
-                    <div class="simpleLgn">
-                        <div>카카오 간편 로그인</div>
-                    </div>
+                    <div class="loginBtn" onclick="fnLogin()">로그인</div>
+                    <a href="https://kauth.kakao.com/oauth/authorize?client_id=eb924f4e7ce51fdc0a8f51ea525d6a5e&redirect_uri=http://localhost:8080/login/callback&response_type=code">
+	                    <div class="simpleLgn">
+	                        <div onclick="fnKakaoLogin()">카카오 간편 로그인</div>
+	                        
+	                    </div>
+                    </a>
                 </form>
             </div>
             <div class="sign">
@@ -217,9 +220,6 @@
 			}
 		});
 	}
-	
-	
-	
 
 </script>
 

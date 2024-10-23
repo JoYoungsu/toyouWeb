@@ -24,7 +24,7 @@
 	
 	<script>
 
-		$( document ).ready(function() {		
+		$( document ).ready(function() {	
 			if("${member}" != '') {
 				$(".U_login").text("로그아웃");
 			} else {

@@ -27,4 +27,7 @@ public class UserVO {
 	
 	private String 		authCode;
 	
+	private String 		userName; 	// 아이디
+	private String		oauth; 		// kakao, google
+	
 }

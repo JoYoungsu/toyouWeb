@@ -75,4 +75,34 @@
 	where
 		user_id = #{user_id}
 	</update>
+	
+	<select id="searchInfo" resultType="com.toyou.common.vo.User" parameterType="com.toyou.common.vo.User">
+	/* 로그인 정보 조회	-	loginCheck */
+		  select 
+		  	*
+		  from tb_user
+		  where 1=1
+		  	and user_id = #{userName}
+	</select>
+	
+	<insert id="kakaoJoin" parameterType="com.toyou.common.vo.User">
+	/* 회원가입	-	kakaoJoin */
+	insert into tb_user (
+		user_id,
+		user_pw,
+		nickname,
+		email,
+		insert_dt,
+		insert_user_id,
+		oauth
+	) values (
+		#{userName},
+		#{password},
+		#{nickname},
+		#{userName},
+		now(),
+		#{userName},
+		#{oauth}
+	)
+	</insert>
 </mapper>

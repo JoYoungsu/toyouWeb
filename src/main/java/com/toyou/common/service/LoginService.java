@@ -1,5 +1,6 @@
 package com.toyou.common.service;
 
+import com.toyou.common.vo.User;
 import com.toyou.common.vo.UserVO;
 
 public interface LoginService {
@@ -16,4 +17,9 @@ public interface LoginService {
 	// 임시 비밀번호 변경
 	public int updatePw(UserVO vo) throws Exception;
 	
+	// 카카오 로그인 - 회원정보 조회
+	public User searchInfo(String username) throws Exception;
+	
+	// 카카오 회원가입
+	public int kakaoJoin(User vo) throws Exception;
 }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.toyou.common.service.LoginService;
+import com.toyou.common.vo.User;
 import com.toyou.common.vo.UserVO;
 import com.toyou.dao.LoginDAO;
 
@@ -36,4 +37,15 @@ public class LoginServiceImpl implements LoginService {
 		return dao.updatePw(vo);
 	}
 	
+	// 카카오 로그인 - 회원정보 조회
+	@Override
+	public User searchInfo(String userName) throws Exception {
+		return dao.searchInfo(userName);
+	}
+	
+	// 카카오 로그인 - 회원가입
+	@Override
+	public int kakaoJoin(User vo) throws Exception {
+		return dao.kakaoJoin(vo);
+	}
 }

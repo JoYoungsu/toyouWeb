@@ -27,10 +27,10 @@ public class MainController {
 	@RequestMapping(value = "/index.do")
 	public String main(HttpServletRequest request, Model model, UserVO vo) {
 		
-		HttpSession session = request.getSession(false);
-        if (session == null) {
-            return "index";
-        }
+//		HttpSession session = request.getSession(false);
+//        if (session == null) {
+//            return "index";
+//        }
 
         Cookie[] cookies=request.getCookies(); // 모든 쿠키 가져오기
         System.out.println("cookies : " + cookies);
