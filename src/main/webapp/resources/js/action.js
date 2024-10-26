@@ -60,8 +60,16 @@ $(document).ready(function(){
 // 241022 추가
 
 // visual 지도
+
+$('#V_map .map_sw img').fadeOut()
+
 $('#V_map .map_sw_1 path').click(function(){
 
-  alert('경고')
+  $(this).addClass('on')
+
+  let mapnum = $(this).parents('svg').index()
+
+  $('.map_sw img').eq(mapnum).fadeIn()
+
 
 })
