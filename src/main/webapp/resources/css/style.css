@@ -19,9 +19,9 @@ header{width: 100%;position: absolute;height: 70px;z-index: 999;background-color
 #H_right .menu div {width: 24px;height: 3px;background-color: #222;}
 
 #visual{width: 100%;display: flex;position: relative;height: 100vh;overflow: hidden;}
-#visual::after {position: absolute;content: '';background-color: #61BBFF;width: 680px;;height: 100%;left: 0;top: 0;transition: .3s;z-index: 1;}
+#visual::after {position: absolute;content: url(../img/map.png);background-color: #61BBFF;width: 680px;;height: 100%;left: 0;top: 0;transition: .3s;z-index: 1;overflow: hidden;}
 #visual.on {height: 900px;}
-#visual.on::after{width: 100%;height: 900px;}
+#visual.on::after{width: 100%;height: 900px;content: "";}
 
 #V_bimg {width: 100%;height: 100%;position: absolute;}
 #V_bimg:before{content: '';position: absolute;left: 0;top: 0;width: 100%;height: 100%;background-color: #333F48;opacity: .9;}
@@ -40,25 +40,29 @@ header{width: 100%;position: absolute;height: 70px;z-index: 999;background-color
 .V_rtx {position: absolute;right: 0;width: 44px;height: 100%;background-color: #fff;top: 0;display: flex;flex-direction: column;justify-content: space-between;align-items: center;padding: 50px 0 16px ;font-size: 20px;font-weight: 500;color: #434343;}
 .V_rtx p {transform: rotate(90deg);letter-spacing: 7px;}
 
-#V_map{position: absolute;width: 680px;z-index: 4;height: 100%;overflow: hidden;transition: .3s;}
+#V_map{position: absolute;width: 640px;z-index: 4;height: 100%;overflow: hidden;transition: .3s;}
 #V_map > div > img {opacity: 0;width: 100%;pointer-events: none;}
 #V_map > div .map_sw img {width: 100%;pointer-events: none;}
 #V_map .mapV {opacity: 1;pointer-events: none;}
 #V_map .map1 {transition: 1.5s;pointer-events: none;}
 #V_map > div {position: relative;width: 100%;height: 100%;}
 #V_map > div .mapV {width: 100%;opacity: 0.3;position: absolute;transition: .5s;transform: scale(150%);}
-#V_map .map_sw {width: 100%;height: 100%;position: absolute;top: 0;left: 0;pointer-events: none;}
+#V_map .map_sw {width: 100%;height: 100%;position: absolute;top: 0;left: 0;pointer-events: none;z-index: 10;}
 #V_map .map_sw img {position: absolute;top: 10px;left: 5px;}
 
 #V_map .map_sw_1 {z-index: 999;}
+#V_map .v1 {top: 10px;z-index: 999;}
 #V_map .map_sw_1 svg {pointer-events: none;}
 #V_map .map_sw_1 svg path {pointer-events: auto;cursor: pointer;}
-#V_map .map_sw_1 svg path.on {fill: #fff;}
+#V_map .map_sw_1 svg.on path {fill: #fff;}
+#V_map .map_sw_1 svg.on polygon {fill: #fff;}
 
+#V_map .map_sw_1.v1 svg.on path {fill: #007AC2;}
+#V_map .map_sw_1.v1 svg.on polygon {fill: #007AC2;}
 
-#V_map.on {overflow: inherit;width: 752px;}
+#V_map.on {overflow: inherit;width: 640px;}
 #V_map.on .mapV {opacity: 0;}
-#V_map.on .map1 {opacity: 0.5;z-index: 1;}
+#V_map.on .map1 {opacity: 0.5;z-index: 1;position: relative;}
 #V_map.on .mapV {transform: scale(100%);opacity: 0.7;animation: map 1s linear forwards;}
 
 @keyframes map {
@@ -76,29 +80,46 @@ header{width: 100%;position: absolute;height: 70px;z-index: 999;background-color
   }
 
 #V_map.on .map_sw_1 {opacity: 1;}
-#V_map.on .map_sw_1 {position: absolute;z-index: 999;top: 0;left: 0;}
+#V_map.on .map_sw_1 {position: absolute;z-index: 999;}
+#V_map.on .v1 {top: 0;}
+#V_map.on .v2 {top: 0;}
 #V_map.on .map_sw_1 svg {position: absolute;}
-#V_map.on .map_sw_1 .map_seoul {top: 145.5762px;left: 146.8541px;width: 78.6682px;height: 60.0018px;}
-#V_map.on .map_sw_1 #map_inc {width: 85.1179px;height: 60.7131px;left: 64.7413px;top: 151.8256px;}
-#V_map.on .map_sw_1 #map_gyengido {width: 304.8938px;height: 331.7455px;left: 46.957px;top: 4.7805px;}
-#V_map.on .map_sw_1 #map_gangwon {width: 412.4151px;height: 385.7814px;left: 224.705px;top: -56.6253px;}
-#V_map.on .map_sw_1 #map_chungnam {width: 275.7655px;height: 267.1343px;left: 8.7611px;top: 287.3845px;}
-#V_map.on .map_sw_1 #map_sejong {width: 40.9571px;height: 74.9607px;left: 198.8953px;top: 371.5339px;}
-#V_map.on .map_sw_1 #map_daegeon {width: 55.3352px;height: 70.6725px;left: 216.5195px;top: 431.1478px;}
-#V_map.on .map_sw_1 #map_chunbuk {width: 267.5325px;height: 289.1107px;left: 229.8743px;top: 260.7224px;}
-#V_map.on .map_sw_1 #map_ulendo {width: 27.033px;height: 21.3316px;left: 689.4952px;top: 231.1577px;}
-#V_map.on .map_sw_1 #map_dockdo {width: 10.7581px;height: 14.4002px;left: 743.027px;top: 259.217px;}
-#V_map.on .map_sw_1 #map_gyengbuk {width: 337.0568px;height: 362.382px;left:325.8814px;top: 307.4548px;}
-#V_map.on .map_sw_1 #map_daegu {width: 82.652px;height: 86.6639px;left:419.1938px;top: 567.1812px;}
-#V_map.on .map_sw_1 #map_junbuk {width: 293.0376px;height: 208.8149px;left:42.186px;top: 507.189px}
-#V_map.on .map_sw_1 #map_ulsan {width: 94.707px;height: 97.8529px;left:539.6815px;top: 639.9055px}
-#V_map.on .map_sw_1 #map_jejudo {width: 155.5626px;height: 80.888px;left:508.1285px;top: 841.3234px}
-#V_map.on .map_sw_1 #map_busan {width: 104.913px;height: 77.3402px;left:495.064px;top: 721.1693px}
-#V_map.on .map_sw_1 #map_gyengnam {width: 320.2498px;height: 300.2555px;left:261.8577px;top: 576.941px}
-#V_map.on .map_sw_1 #map_gwangju {width: 71.3458px;height: 44.6646px;left:73.8564px;top: 716.5216px}
-#V_map.on .map_sw_1 #map_junnam {width: 370.6055px;height: 280.291px;left:-77.476px;top: 662.5048px}
+#V_map.on .map_sw_1 #map_seoul {top: 175.7312px;left: 142.4828px;width: 67.9171px;height: 51.8017px;}
+#V_map.on .map_sw_1 #map_inc {width:73.4855px;height: 52.4159px;left: 72.4553px;top: 181.1265px;}
+#V_map.on .map_sw_1 #map_gyengido {width: 263.226px;height: 286.4081px;left: 57.1014px;top:54.1771px;}
+#V_map.on .map_sw_1 #map_gyengido rect {fill: #fff;opacity: 0;}
+#V_map.on .map_sw_1 #map_gangwon {width:356.053px;height: 333.0592px;left:210.5577px;top: 1.1633px;}
+#V_map.on .map_sw_1 #map_chungnam {width: 238.0785px;height: 230.6268px;left:24.1255px;top:298.1595px;}
+#V_map.on .map_sw_1 #map_sejong {width: 35.3598px;height: 64.7163px;left:188.2753px;top: 370.8088px;}
+#V_map.on .map_sw_1 #map_daegeon {width: 47.7729px;height:61.0141px;left: 203.4909px;top: 422.2757px;}
+#V_map.on .map_sw_1 #map_chunbuk {width:230.9706px;height:249.5999px;left:215.0206px;top:275.1411px;}
+#V_map.on .map_sw_1 #map_ulendo {width:23.3386px;height:18.4164px;left:600.3687px;top:240.9738px}
+#V_map.on .map_sw_1 #map_dockdo {width:9.2879px;height:12.4322px;left:630.0093px;top:260.1984px;}
+#V_map.on .map_sw_1 #map_gyengbuk {width:290.9935px;height:312.8576px;left:297.907px;top:315.4869px;}
+#V_map.on .map_sw_1 #map_daegu {width:71.3565px;height:74.8202px;left:378.4671px;top:539.7182px;}
+#V_map.on .map_sw_1 #map_junbuk {width: 252.9901px;height:180.2776px;left:52.9825px;top:487.9248px}
+#V_map.on .map_sw_1 #map_ulsan {width:81.7641px;height:84.4801px;left:482.4885px;top:602.5038px}
+#V_map.on .map_sw_1 #map_jejudo {width:134.3029px;height:69.8336px;left:455.2476px;top:776.3952px}
+#V_map.on .map_sw_1 #map_busan {width:90.5753px;height:66.7707px;left:443.9686px;top:672.6618px}
+#V_map.on .map_sw_1 #map_gyengnam {width:276.4834px;height:259.2216px;left:242.633px;top:548.1443px}
+#V_map.on .map_sw_1 #map_gwangju {width:61.5954px;height:38.5606px;left:80.3246px;top:668.6493px}
+#V_map.on .map_sw_1 #map_junnam {width:269.3101px;height:241.9854px;left:0.3209px;top:622.0146px}
 
+.map_in {position: absolute;right: 0;top: 50%;z-index: 999;transform: translateY(-50%);display: flex;gap: 20px;}
+.map_inL {}
+.map_inL img{width: 240px;height: 240px;box-shadow: 3px 6px 6px rgba(0,0,0,0.25);border-radius: 25px;}
+.map_inL > div {width: 100%;display: flex;color: #fff;justify-content: space-between;margin-top: 10px;}
+.map_inL > div p:first-child b{font-size: 36px;}
+.map_inL > div p:first-child span {font-size: 20px;}
+.map_inL > div p:last-child {display: flex;flex-direction: column;height: 100%;justify-content: end;align-items: flex-end;gap: 8px}
+.map_inL > div p:last-child span {font-size: 12px;display: block;}
 
+.map_inR {width: 280px;word-break: break-all;display: flex;flex-direction: column;justify-content: space-between;color: #fff;}
+.map_inR h4 {font-size: 36px;font-weight: bold;margin-bottom: 10px;}
+.map_inR > div {}
+.map_inR div div  {display: flex;gap: 12px;}
+.map_inR div p {padding: 3px 15px;border: 1px solid #fff;color: #fff;border-radius: 20px;}
+.map_inR button {width: 100%;height: 50px;line-height: 50px;font-size: 24px;text-align: center;color: #fff;border: 1px solid #fff;border-radius: 200px;background-color: transparent;}
 
 
 .V_scroll{position: absolute;width: 20px;height: 24px;bottom: 5px;background-color: #fff;left: 50%;transform: translateX(-50%);z-index: 999;display: none;}

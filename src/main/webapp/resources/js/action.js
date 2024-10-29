@@ -53,7 +53,7 @@ $(document).ready(function(){
   $('.sign .logincer').addClass('on')
     
   })
-   
+  
 })
 
 
@@ -62,14 +62,56 @@ $(document).ready(function(){
 // visual 지도
 
 $('#V_map .map_sw img').fadeOut()
-
-$('#V_map .map_sw_1 path').click(function(){
-
-  $(this).addClass('on')
-
-  let mapnum = $(this).parents('svg').index()
-
-  $('.map_sw img').eq(mapnum).fadeIn()
+$('.map_in').fadeOut()
 
 
-})
+
+// $('#V_map .map_sw_1.v2 path').click(function(){
+  
+//   let svgTop = $(this).parents('svg').offset().top;
+//   let mapnum = $(this).parents('svg').index()
+
+//   $('#V_search').fadeOut()
+//   $('.map_in').fadeIn()
+
+//   $(this).parents('svg').animate({'top':svgTop - 10}).addClass('on').siblings().removeClass('on')
+//   if($(this).parents('svg').hasClass('on')){
+
+//     $(this).parents('svg').css({'top':svgTop })
+
+//   }
+
+//   $('.map_sw img').eq(mapnum).fadeIn()
+//   $('.map_sw_1.v1 svg').eq(mapnum).addClass('on').siblings().removeClass('on')
+
+// })
+
+
+
+$('#V_map .map_sw_1.v2 path').click(function() {
+  let svg = $(this).parents('svg');
+  let originalTop = svg.data('originalTop'); // 초기 top 값을 저장하기 위한 변수
+  let currentTop = svg.offset().top;
+  let mapnum = svg.index();
+
+  // 최초 클릭 시 초기 top 값을 저장
+  if (originalTop === undefined) {
+      originalTop = currentTop;
+      svg.data('originalTop', originalTop);  // originalTop 값 저장
+  }
+
+  // top 값을 복구하거나 변경하는 로직
+  if (svg.hasClass('on')) {
+    svg.css({ 'top': currentTop }).addClass('on').siblings().removeClass('on'); // 원상복구
+  } else {
+      $('#V_search').fadeOut();
+      $('.map_in').fadeIn();
+
+      svg.css({ 'top': originalTop - 10 }).addClass('on').siblings().removeClass('on');
+
+      $('.map_sw img').eq(mapnum).fadeIn();
+      $('.map_sw_1.v1 svg').eq(mapnum).addClass('on').siblings().removeClass('on');
+  }
+});
+
+
